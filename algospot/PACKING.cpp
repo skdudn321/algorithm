@@ -13,12 +13,12 @@ using namespace std;
 
 int ans;
 int ans2;
-char name[101][30];
-int heavy[101];
-int want[101];
-int dp[101][1001];
+char name[110][30];
+int heavy[110];
+int want[110];
+int dp[110][1010];
 int N, W;
-bool check[101];
+bool check[110];
 
 int recursion(int weigh, int num);
 void recursion2(int weigh, int num);
@@ -51,11 +51,11 @@ int main(void) {
 }
 
 int recursion(int weigh, int num) {
-	if (dp[num][weigh] != -1) {
-		return dp[num][weigh];
-	}
 	if (num > N) {
 		return 0;
+	}
+	if (dp[num][weigh] != -1) {
+		return dp[num][weigh];
 	}
 
 	int ret;
